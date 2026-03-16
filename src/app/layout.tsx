@@ -48,10 +48,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/necklace5.jpg",
+        url: "/opengraph-image",
         width: 1200,
-        height: 1200,
-        alt: "지흔님을 위해 준비한 선물",
+        height: 630,
+        alt: "A thoughtfully prepared gift for Jiheun",
       },
     ],
   },
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "지흔님을 생각하며 준비한 선물",
     description: "특별한 지흔 대표님을 생각하며 준비한 선물 페이지",
-    images: ["/necklace5.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 
