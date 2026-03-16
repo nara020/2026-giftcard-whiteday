@@ -14,13 +14,52 @@ const notoSerifKr = Noto_Serif_KR({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "https://2026-giftcard-whiteday.vercel.app");
+
 export const metadata: Metadata = {
-  title: "A Gift For You",
-  description: "지흔님만을 위해 준비 중인 선물 카드 페이지",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "지흔님을 생각하며 준비한 선물",
+    template: "%s | 2026 Giftcard Whiteday",
+  },
+  applicationName: "2026 Giftcard Whiteday",
+  description: "특별한 지흔 대표님을 생각하며 준비한 선물 페이지",
+  authors: [{ name: "Jinhyeok" }],
+  creator: "Jinhyeok",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
-    title: "A Gift For You",
-    description: "지흔님만을 위해 준비 중인 선물 카드 페이지",
+    title: "지흔님을 생각하며 준비한 선물",
+    description: "특별한 지흔 대표님을 생각하며 준비한 선물 페이지",
+    url: siteUrl,
+    siteName: "2026 Giftcard Whiteday",
     type: "website",
+    images: [
+      {
+        url: "/necklace5.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "지흔님을 위해 준비한 선물",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "지흔님을 생각하며 준비한 선물",
+    description: "특별한 지흔 대표님을 생각하며 준비한 선물 페이지",
+    images: ["/necklace5.jpg"],
   },
 };
 

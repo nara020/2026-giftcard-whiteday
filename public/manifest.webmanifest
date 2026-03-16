@@ -1,0 +1,16 @@
+{
+  "name": "2026 Giftcard Whiteday",
+  "short_name": "Giftcard",
+  "description": "특별한 지흔 대표님을 생각하며 준비한 선물 페이지",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffdfd",
+  "theme_color": "#d4a0a5",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

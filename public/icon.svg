@@ -1,0 +1,36 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="64" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="92" fill="url(#halo)" fill-opacity="0.9"/>
+  <path d="M80 88C97 69 116 66 128 100" stroke="url(#chain)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M176 88C159 69 140 66 128 100" stroke="url(#chain)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M128 102L96 146L128 202L160 146L128 102Z" fill="url(#diamondFill)" stroke="url(#diamondStroke)" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M96 146H160" stroke="rgba(255,255,255,0.7)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M110 124H146" stroke="rgba(255,255,255,0.62)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M110 124L128 202" stroke="rgba(255,255,255,0.62)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M146 124L128 202" stroke="rgba(255,255,255,0.62)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M198 65L202 79L216 83L202 87L198 101L194 87L180 83L194 79L198 65Z" fill="rgba(255,255,255,0.92)"/>
+  <path d="M61 163L64 173L74 176L64 179L61 189L58 179L48 176L58 173L61 163Z" fill="rgba(255,255,255,0.8)"/>
+  <defs>
+    <linearGradient id="bg" x1="26" y1="18" x2="228" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8FA"/>
+      <stop offset="1" stop-color="#F6E8EA"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(128 128) rotate(90) scale(92)">
+      <stop stop-color="white"/>
+      <stop offset="0.42" stop-color="#FFEFF3"/>
+      <stop offset="1" stop-color="#F4D8DE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chain" x1="80" y1="66" x2="176" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8B88C"/>
+      <stop offset="1" stop-color="#F3DEC0"/>
+    </linearGradient>
+    <linearGradient id="diamondStroke" x1="96" y1="102" x2="160" y2="202" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9EE"/>
+      <stop offset="1" stop-color="#F3DCC0"/>
+    </linearGradient>
+    <linearGradient id="diamondFill" x1="128" y1="102" x2="128" y2="202" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF9"/>
+      <stop offset="1" stop-color="#F9E8EC"/>
+    </linearGradient>
+  </defs>
+</svg>

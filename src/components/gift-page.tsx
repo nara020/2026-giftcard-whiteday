@@ -550,18 +550,7 @@ export function GiftPage({ variant }: { variant: VariantName }) {
           ) : null}
           <div className="ornament-dot mb-8" />
           <p className="eyebrow">{content.eyebrow}</p>
-          <div className="hero-image-wrap">
-            <div className="hero-image-ring" />
-            <div className="hero-image-aura" />
-            <div className="hero-image">
-              <Image src="/necklace5.jpg" alt="선물로 준비 중인 목걸이" fill priority className="object-cover" sizes="(max-width: 768px) 72vw, 420px" />
-              <div className="hero-image-sheen" />
-            </div>
-            <Sparkle className="left-[12%] top-[16%]" delay={0.3} size={10} />
-            <Sparkle className="right-[13%] top-[14%]" delay={1} size={8} />
-            <Sparkle className="right-[10%] bottom-[18%]" delay={1.7} size={9} />
-          </div>
-          <div className="space-y-5 text-center">
+          <div className="hero-copy-wrap space-y-5 text-center">
             <motion.h1 className="hero-title" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.9 }}>
               {content.heroTitle.map((line) => (
                 <span key={line} className="block text-[var(--text)]">
@@ -625,6 +614,27 @@ export function GiftPage({ variant }: { variant: VariantName }) {
             <p className="eyebrow">My Promise</p>
             <h2 className="promise-title">{content.promiseTitle}</h2>
             <RevealLines lines={content.promiseBody} className="section-copy" />
+          </motion.div>
+        </section>
+
+        <Divider />
+
+        <section className="romance-section">
+          <motion.div className="section-inner text-center" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.9 }}>
+            <p className="eyebrow">For You</p>
+            <h2 className="section-title">지흔님을 위해 준비한 선물이에요</h2>
+            <p className="section-copy photo-copy">마지막까지 가장 예쁘게 전해드리고 싶어서, 이 장면은 여기 남겨둘게요.</p>
+            <div className="hero-image-wrap photo-reveal">
+              <div className="hero-image-ring" />
+              <div className="hero-image-aura" />
+              <div className="hero-image">
+                <Image src="/necklace5.jpg" alt="선물로 준비 중인 목걸이" fill priority className="object-cover" sizes="(max-width: 768px) 72vw, 420px" />
+                <div className="hero-image-sheen" />
+              </div>
+              <Sparkle className="left-[12%] top-[16%]" delay={0.3} size={10} />
+              <Sparkle className="right-[13%] top-[14%]" delay={1} size={8} />
+              <Sparkle className="right-[10%] bottom-[18%]" delay={1.7} size={9} />
+            </div>
           </motion.div>
         </section>
 
