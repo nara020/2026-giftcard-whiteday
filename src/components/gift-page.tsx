@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
@@ -44,8 +44,8 @@ const variants: Record<VariantName, VariantContent> = {
   sweet: {
     name: "sweet",
     eyebrow: "For Jiheun",
-    heroTitle: ["특별한 지흔 대표님을"],
-    heroAccent: "생각하며 준비한 선물",
+    heroTitle: ["특별한 지흔", "대표님을"],
+    heroAccent: "생각하며\n준비한 선물",
     heroBody: ["좋아하는 마음을", "이번에는 말보다 더 분명하게 전하고 싶었어요"],
     letterTo: "To. 지흔",
     letterLines: [
@@ -54,7 +54,7 @@ const variants: Record<VariantName, VariantContent> = {
     ],
     giftCaption: "For the one I truly adore",
     giftBody: ["지흔님을 무겁게 생각하고", "제가 사랑하는 마음을 담았어요"],
-    promiseTitle: "언제나 지흔님 편으로 있을게요",
+    promiseTitle: "언제나 지흔님\n편으로 있을게요",
     promiseBody: ["저는 언제나\n지흔님 편으로 있을게요", "좋은 날에도 힘든 날에도\n지흔님이 믿을 수 있게 할게요"],
     statusNote: "예쁜 모습으로 만나기까지 약 2주 정도의 시간이 걸려요",
     footer: "made with love, just for Jiheun",
@@ -526,7 +526,15 @@ function MusicPlayer({
   );
 }
 
-export function GiftPage({ variant }: { variant: VariantName }) {
+export function GiftPage({
+  variant,
+  showImageSection = false,
+  showHomeLink = false,
+}: {
+  variant: VariantName;
+  showImageSection?: boolean;
+  showHomeLink?: boolean;
+}) {
   const [showIntro, setShowIntro] = useState(true);
   const [entryMode, setEntryMode] = useState<"pending" | "music" | "silent">("pending");
   const [showStatus, setShowStatus] = useState(false);
@@ -543,7 +551,7 @@ export function GiftPage({ variant }: { variant: VariantName }) {
       {!showIntro && entryMode === "silent" ? <MusicPlayer /> : null}
       <main className={`mx-auto min-h-screen w-full max-w-[520px] transition-opacity duration-500 ${showContent ? "opacity-100" : "pointer-events-none opacity-0"}`}>
         <section className="romance-section min-h-[100svh] justify-center pt-24">
-          {variant !== "sweet" ? (
+          {showHomeLink || variant !== "sweet" ? (
             <Link href="/" className="selector-back">
               home
             </Link>
@@ -612,33 +620,43 @@ export function GiftPage({ variant }: { variant: VariantName }) {
         <section className="romance-section">
           <motion.div className="section-inner text-center" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.9 }}>
             <p className="eyebrow">My Promise</p>
-            <h2 className="promise-title">{content.promiseTitle}</h2>
+            <h2 className="promise-title">
+              {content.promiseTitle.split("\n").map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </h2>
             <RevealLines lines={content.promiseBody} className="section-copy" />
           </motion.div>
         </section>
 
         <Divider />
 
-        <section className="romance-section">
-          <motion.div className="section-inner text-center" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.9 }}>
-            <p className="eyebrow">For You</p>
-            <h2 className="section-title">지흔님을 위해 준비한 선물이에요</h2>
-            <p className="section-copy photo-copy">마지막까지 가장 예쁘게 전해드리고 싶어서, 이 장면은 여기 남겨둘게요.</p>
-            <div className="hero-image-wrap photo-reveal">
-              <div className="hero-image-ring" />
-              <div className="hero-image-aura" />
-              <div className="hero-image">
-                <Image src="/necklace5.jpg" alt="선물로 준비 중인 목걸이" fill priority className="object-cover" sizes="(max-width: 768px) 72vw, 420px" />
-                <div className="hero-image-sheen" />
-              </div>
-              <Sparkle className="left-[12%] top-[16%]" delay={0.3} size={10} />
-              <Sparkle className="right-[13%] top-[14%]" delay={1} size={8} />
-              <Sparkle className="right-[10%] bottom-[18%]" delay={1.7} size={9} />
-            </div>
-          </motion.div>
-        </section>
+        {showImageSection ? (
+          <>
+            <section className="romance-section">
+              <motion.div className="section-inner text-center" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.9 }}>
+                <p className="eyebrow">For You</p>
+                <h2 className="section-title">지흔님을 위해 준비한 선물이에요</h2>
+                <p className="section-copy photo-copy">실물은 직접 보여드리고 싶지만, 이 마음은 여기에도 조용히 담아둘게요.</p>
+                <div className="hero-image-wrap photo-reveal">
+                  <div className="hero-image-ring" />
+                  <div className="hero-image-aura" />
+                  <div className="hero-image">
+                    <Image src="/necklace5.jpg" alt="선물로 준비 중인 목걸이" fill priority className="object-cover" sizes="(max-width: 768px) 72vw, 420px" />
+                    <div className="hero-image-sheen" />
+                  </div>
+                  <Sparkle className="left-[12%] top-[16%]" delay={0.3} size={10} />
+                  <Sparkle className="right-[13%] top-[14%]" delay={1} size={8} />
+                  <Sparkle className="right-[10%] bottom-[18%]" delay={1.7} size={9} />
+                </div>
+              </motion.div>
+            </section>
 
-        <Divider />
+            <Divider />
+          </>
+        ) : null}
 
         <section className="romance-section pb-24">
           <motion.div className="section-inner text-center" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.9 }}>
