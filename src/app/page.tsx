@@ -1,5 +1,5 @@
 import { GiftPage } from "@/components/gift-page";
 
 export default function Page() {
-  return <GiftPage variant="sweet" />;
+  return <GiftPage variant="sweet" showImageSection />;
 }
