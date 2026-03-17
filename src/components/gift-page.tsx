@@ -637,8 +637,8 @@ export function GiftPage({
             <section className="romance-section">
               <motion.div className="section-inner text-center" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.9 }}>
                 <p className="eyebrow">For You</p>
-                <h2 className="section-title">지흔님을 위해 준비한 장면이에요</h2>
-                <p className="section-copy photo-copy">실물은 직접 보여드리고 싶지만, 이 반짝임은 여기에도 조용히 담아둘게요.</p>
+                <h2 className="section-title">지흔님을 위해 준비한 선물이에요</h2>
+                <p className="section-copy photo-copy">실물은 직접 보여드리고 싶지만, 이 마음은 여기에도 조용히 담아둘게요.</p>
                 <div className="gift-video-shell photo-reveal">
                   <div className="gift-video-aura" />
                   <div className="gift-video-frame">
