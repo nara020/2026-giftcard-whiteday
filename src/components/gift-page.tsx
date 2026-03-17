@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
@@ -638,18 +637,23 @@ export function GiftPage({
             <section className="romance-section">
               <motion.div className="section-inner text-center" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.9 }}>
                 <p className="eyebrow">For You</p>
-                <h2 className="section-title">지흔님을 위해 준비한 선물이에요</h2>
-                <p className="section-copy photo-copy">실물은 직접 보여드리고 싶지만, 이 마음은 여기에도 조용히 담아둘게요.</p>
-                <div className="hero-image-wrap photo-reveal">
-                  <div className="hero-image-ring" />
-                  <div className="hero-image-aura" />
-                  <div className="hero-image">
-                    <Image src="/necklace5.jpg" alt="선물로 준비 중인 목걸이" fill priority className="object-cover" sizes="(max-width: 768px) 72vw, 420px" />
-                    <div className="hero-image-sheen" />
+                <h2 className="section-title">지흔님을 위해 준비한 장면이에요</h2>
+                <p className="section-copy photo-copy">실물은 직접 보여드리고 싶지만, 이 반짝임은 여기에도 조용히 담아둘게요.</p>
+                <div className="gift-video-shell photo-reveal">
+                  <div className="gift-video-aura" />
+                  <div className="gift-video-frame">
+                    <iframe
+                      className="gift-video-embed"
+                      src="https://www.youtube.com/embed/lpkaiE8_vp0?playsinline=1&rel=0"
+                      title="Diamond necklace preview"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
                   </div>
-                  <Sparkle className="left-[12%] top-[16%]" delay={0.3} size={10} />
-                  <Sparkle className="right-[13%] top-[14%]" delay={1} size={8} />
-                  <Sparkle className="right-[10%] bottom-[18%]" delay={1.7} size={9} />
+                  <Sparkle className="left-[10%] top-[12%]" delay={0.3} size={10} />
+                  <Sparkle className="right-[11%] top-[10%]" delay={1} size={8} />
+                  <Sparkle className="right-[9%] bottom-[14%]" delay={1.7} size={9} />
                 </div>
               </motion.div>
             </section>
