@@ -642,14 +642,17 @@ export function GiftPage({
                 <div className="gift-video-shell photo-reveal">
                   <div className="gift-video-aura" />
                   <div className="gift-video-frame">
-                    <iframe
+                    <video
                       className="gift-video-embed"
-                      src="https://www.youtube.com/embed/lpkaiE8_vp0?playsinline=1&rel=0"
-                      title="Diamond necklace preview"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
+                      src="/diamond-preview.mp4"
+                      poster="/necklace5.jpg"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
                     />
+                    <div className="gift-video-sheen" />
                   </div>
                   <Sparkle className="left-[10%] top-[12%]" delay={0.3} size={10} />
                   <Sparkle className="right-[11%] top-[10%]" delay={1} size={8} />
