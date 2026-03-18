@@ -183,6 +183,7 @@ function Intro({ onComplete }: { onComplete: () => void }) {
   const [phase, setPhase] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const timers = [
       window.setTimeout(() => setPhase(1), 220),
       window.setTimeout(() => setPhase(2), 1550),
@@ -643,7 +644,6 @@ export function GiftPage({
                 </h2>
                 <p className="section-copy photo-copy">실물은 직접 보여드리고 싶지만, 이 마음은 여기에도 조용히 담아둘게요.</p>
                 <div className="gift-video-shell photo-reveal">
-                  <div className="gift-video-aura" />
                   <div className="gift-video-frame">
                     <video
                       className="gift-video-embed"
@@ -655,11 +655,7 @@ export function GiftPage({
                       playsInline
                       preload="metadata"
                     />
-                    <div className="gift-video-sheen" />
                   </div>
-                  <Sparkle className="left-[10%] top-[12%]" delay={0.3} size={10} />
-                  <Sparkle className="right-[11%] top-[10%]" delay={1} size={8} />
-                  <Sparkle className="right-[9%] bottom-[14%]" delay={1.7} size={9} />
                 </div>
               </motion.div>
             </section>

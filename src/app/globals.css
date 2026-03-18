@@ -114,42 +114,19 @@ body::before {
   margin-bottom: 3.2rem;
 }
 
-.gift-video-aura {
-  position: absolute;
-  inset: -1.8rem;
-  border-radius: 9999px;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95), rgba(255, 239, 243, 0.38) 36%, rgba(244, 231, 207, 0.18) 54%, transparent 76%);
-  filter: blur(20px);
-  opacity: 0.92;
+.gift-video-aura,
+.gift-video-ring,
+.gift-video-sheen {
+  display: none;
 }
 
 .gift-video-frame {
   position: relative;
-  overflow: hidden;
-  width: min(72vw, 19rem);
   height: min(72vw, 19rem);
+  width: min(72vw, 19rem);
+  overflow: hidden;
   border-radius: 9999px;
-  padding: 0.82rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 238, 241, 0.52)),
-    radial-gradient(circle, rgba(212, 160, 165, 0.12), transparent 70%);
-  box-shadow:
-    0 28px 56px rgba(213, 170, 176, 0.18),
-    0 0 0 1px rgba(255, 255, 255, 0.75),
-    inset 0 0 0 1px rgba(212, 160, 165, 0.14);
-  backdrop-filter: blur(8px);
-}
-
-.gift-video-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 24%),
-    radial-gradient(circle at 82% 16%, rgba(255, 255, 255, 0.22), transparent 18%);
+  margin: 0 auto;
 }
 
 .gift-video-embed {
@@ -160,20 +137,7 @@ body::before {
   border-radius: 9999px;
   background: #f7f3f4;
   object-fit: cover;
-  box-shadow:
-    0 18px 34px rgba(199, 149, 156, 0.15),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.28);
-}
-
-.gift-video-sheen {
-  position: absolute;
-  inset: 0.82rem;
-  border-radius: 9999px;
-  pointer-events: none;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 26%),
-    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.24), transparent 24%);
-  mix-blend-mode: screen;
+  transform: scale(1.03);
 }
 
 .photo-reveal {
